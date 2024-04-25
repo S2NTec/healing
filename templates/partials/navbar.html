@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-color-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="{% static 'geral/img/logo.png' %}" width="20%" alt="">&nbspHEALING</a>
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'geral/img/logo.png' %}" width="20%" alt="">&nbspHEALING</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -14,6 +14,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="{% url 'home' %}">Home</a></li>
                   <li><a class="dropdown-item" href="{% url 'minhas_consultas' %}">Minhas consultas</a></li>
+                  <li><a class="dropdown-item" href="{% url 'sair' %}">SAIR</a></li>
                 </ul>
             </li>
 
@@ -32,6 +33,11 @@
                     <a class="nav-link" href="{% url 'cadastro_medico' %}">Sou médico</a>
                 </li>
             {% endif %}
+        </ul>
+        <ul class="justify-content-end nav nav-pills">
+          <li class="nav-item">
+            <a class="link nav-link active" href="#">{{request.user.username}}</a>
+        </li>
         </ul>
       </div>
     </div>

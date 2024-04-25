@@ -37,8 +37,8 @@ def cadastro(request):
             email=email,
             password=senha
         )
-
-        return HttpResponse(f'Usuário: {username}-{email}-{senha}, criado com sucesso')
+        return redirect('/usuarios/login')
+        #return HttpResponse(f'Usuário: {username}-{email}-{senha}, criado com sucesso')
     
 def login_view(request):
     if request.method == "GET":
